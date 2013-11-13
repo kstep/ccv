@@ -300,6 +300,8 @@ enum {
 	CCV_IO_UNKNOWN,
 };
 
+ccv_dense_matrix_t* ccv_read_matrix(const void* in, int type, int rows, int cols, int scanline);
+
 int ccv_read_impl(const void* in, ccv_dense_matrix_t** x, int type, int rows, int cols, int scanline);
 #define ccv_read_n(in, x, type, rows, cols, scanline, ...) \
 	ccv_read_impl(in, x, type, rows, cols, scanline)

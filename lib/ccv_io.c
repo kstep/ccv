@@ -169,6 +169,13 @@ static fpos_t seekfn(void* context, fpos_t off, int whence)
 }
 #endif
 
+ccv_dense_matrix_t* ccv_read_matrix(const void* in, int type, int rows, int cols, int scanline)
+{
+    ccv_dense_matrix_t* x = NULL;
+    ccv_read_impl(in, &x, type, rows, cols, scanline);
+    return x;
+}
+
 int ccv_read_impl(const void* in, ccv_dense_matrix_t** x, int type, int rows, int cols, int scanline)
 {
 	FILE* fd = 0;
