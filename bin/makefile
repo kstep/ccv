@@ -12,10 +12,10 @@ clean:
 	${MAKE} clean -C ../lib ; rm -f *.o $(TARGETS)
 
 $(TARGETS): %: %.o libccv.a
-	$(CC) -o $@ $< $(LDFLAGS)
+	$(CC) -o $@ $< $(LDFLAGS) -L/usr/lib/atlas -L/usr/lib64/atlas
 
 libccv.a:
 	${MAKE} -C ../lib
 
 %.o: %.c ../lib/ccv.h
-	$(CC) $< -o $@ -c $(CFLAGS) $(LDFLAGS) -L/usr/lib/atlas -L/usr/lib64/atlas
+	$(CC) $< -o $@ -c $(CFLAGS)
