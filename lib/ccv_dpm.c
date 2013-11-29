@@ -10,7 +10,7 @@
 #include <omp.h>
 #endif
 #ifdef HAVE_LIBLINEAR
-#include <linear.h>
+#include <linear/linear.h>
 #endif
 
 const ccv_dpm_param_t ccv_dpm_default_params = {
