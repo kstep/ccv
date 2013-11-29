@@ -18,4 +18,4 @@ libccv.a:
 	${MAKE} -C ../lib
 
 %.o: %.c ../lib/ccv.h
-	$(CC) $< -o $@ -c $(CFLAGS)
+	$(CC) $< -o $@ -c $(CFLAGS) $(LDFLAGS) -L/usr/lib/atlas -L/usr/lib64/atlas
